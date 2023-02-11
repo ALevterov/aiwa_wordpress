@@ -597,7 +597,7 @@ article {
   margin-left: 150px;
 }
 .cars__item__circle {
-    bottom: -20px;
+  bottom: -20px;
 }
 @media screen and (max-width: 1024px) {
   .item__circle.cars__item__circle {
@@ -647,7 +647,7 @@ article {
   animation-name: arrowScroll;
   animation-duration: 1.4s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;  
+  animation-iteration-count: infinite;
 }
 .kaif__scroll {
   display: flex;
@@ -712,7 +712,13 @@ article {
 /* end kaif */
 
 .gradient {
-  background: linear-gradient(to bottom, #ffffff 0%,#EFEFEF 25%, #EFEFEF 50%, #C9BEAC 100%);
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #efefef 25%,
+    #efefef 50%,
+    #c9beac 100%
+  );
   width: 120%;
   height: 160px;
   position: relative;
@@ -724,7 +730,7 @@ article {
 .gradient2 {
   position: absolute;
   width: 120%;
-  background: #EFEFEF;
+  background: #efefef;
   /* background: linear-gradient(to bottom, ,#EFEFEF); */
   height: 30px;
   top: -10px;
@@ -851,7 +857,9 @@ section {
 .cars__item.cars__down > .cars__image__add.cars__add__open {
   margin-bottom: -60px;
 }
-
+.cars__item.cars__down {
+  height: auto;
+}
 .burger:hover {
   cursor: pointer;
 }
@@ -1190,6 +1198,14 @@ header {
   z-index: 9999;
   position: relative;
 }
+.cars > .container {
+  -webkit-box-shadow: 0px -20px 8px 0px rgba(13, 13, 13, 0.2) inset,
+    0px 20px 8px 0px rgba(13, 13, 13, 0.2) inset;
+  -moz-box-shadow: 0px -20px 8px 0px rgba(13, 13, 13, 0.2) inset,
+    0px 20px 8px 0px rgba(13, 13, 13, 0.2) inset;
+  box-shadow: 0px -20px 8px 0px rgba(13, 13, 13, 0.2) inset,
+    0px 20px 8px 0px rgba(13, 13, 13, 0.2) inset;
+}
 
 #item1,
 #item2,
@@ -1318,7 +1334,8 @@ header {
   z-index: 2;
 }
 
-.item__btn > button, .item__btn > a {
+.item__btn > button,
+.item__btn > a {
   width: 178.94px;
   height: 39px;
   font-weight: 400;
@@ -1340,7 +1357,8 @@ header {
   text-decoration: none;
   white-space: nowrap;
 }
-.item__btn > button:hover, .item__btn > a:hover {
+.item__btn > button:hover,
+.item__btn > a:hover {
   background: #edc89e;
 }
 
@@ -1631,8 +1649,26 @@ header {
   right: 10%;
   width: 267px;
   height: 190px;
-}
 
+  -webkit-box-shadow: -8px 0px 8px 0px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: -8px 0px 8px 0px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: -8px 0px 8px 0px rgba(0, 0, 0, 0.2) inset;
+}
+.calc__image > img {
+  width: 100%;
+  height: 100%;
+}
+.calc__image_shadow {
+  position: absolute;
+  background: #000;
+  filter: blur(0.7em);
+  width: 20px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+}
 .calc__select {
   display: flex;
   justify-content: space-between;
@@ -1926,7 +1962,7 @@ option {
 .rent__inner {
   display: flex;
   justify-content: space-between;
-  margin: 35px 0px;
+  margin: 35px 0 10px 0px;
   gap: 20px;
 }
 
@@ -2139,6 +2175,8 @@ input:focus {
   color: #ffffff;
   padding-left: 25px;
   font-family: 'Montserrat';
+
+  padding-top: 6px;
 }
 
 .rent__btn > button {
@@ -2148,7 +2186,7 @@ input:focus {
   background: rgba(0, 0, 0, 0.1);
   border: 0.797189px solid #edc89e;
   backdrop-filter: blur(11px);
-  border-radius: 10px;
+  border-radius: 7px;
   font-style: normal;
   font-weight: 400;
   font-size: 19.9297px;
@@ -2611,16 +2649,38 @@ button.btn__thx {
 }
 
 .info__bg {
-  background-image: url(assets/image/info/fon.png);
+  /* background-image: url(assets/image/info/fon.png); */
   /* background-size: cover; */
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: 0px;
-  height: 693px;
+  height: auto;
   width: 100%;
   z-index: 1;
-}
+  padding-bottom: 40px;
 
+  position: relative;
+}
+.info__bg > .container {
+  position: relative;
+  z-index: 2;
+}
+#myVideo {
+  position: absolute;
+  /* top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: 100%;
+}
+@media screen and (max-width: 1024px) {
+  #myVideo {
+    left: calc(-961px + 50%);
+  }
+}
 .info__inner {
   display: flex;
   justify-content: space-between;
@@ -3208,7 +3268,8 @@ footer {
     bottom: 40px;
   }
 
-  .item__btn > button, .item__btn > a {
+  .item__btn > button,
+  .item__btn > a {
     font-size: 12px;
     width: 138.41px;
     height: 30.17px;
@@ -3428,7 +3489,7 @@ footer {
   /* info */
   .info__item > p {
     font-size: 15.4697px;
-    /* width: 624.97px; */
+    width: 624.97px;
   }
 
   .info__item > h3 {
@@ -3508,7 +3569,7 @@ footer {
   /* info */
   .info__item > p {
     font-size: 15.4697px;
-    /* width: 424.97px; */
+    width: 424.97px;
   }
 
   .info__item > h3 {
@@ -3530,7 +3591,41 @@ footer {
   }
   /* end how */
 }
-
+@media screen and (max-width: 1281px) {
+  .kaif__scroll {
+    bottom: -60px;
+  }
+  .main__logo > span {
+    font-size: 80px;
+    line-height: 103px;
+  }
+  .main__logo__position {
+    top: 230px;
+  }
+  .calc {
+    margin-top: 70px;
+  }
+  /* .cond__item {
+    padding: 0 12px;
+  }
+  .cond__text__open > ul {
+    margin-left: 16px;
+  } */
+  /* .cond__inner > .cond__item {
+    width: 412px;
+  } */
+  .cond__text.cond__text__open > ul > li {
+    width: 330px;
+  }
+  .info__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info__item > p {
+    width: 100%;
+  }
+}
 @media (max-width: 1140px) {
   .main__logo {
     font-size: 48px;
@@ -3740,7 +3835,8 @@ footer {
     z-index: 99999;
   }
 
-  .item__btn > button, .item__btn > a {
+  .item__btn > button,
+  .item__btn > a {
     font-size: 9.5366px;
     width: 130px;
     height: 23.97px;
@@ -4156,6 +4252,7 @@ footer {
 
   .info {
     margin: 50px 0px 300px 0px;
+    margin-bottom: 0;
   }
 
   .info__inner {
@@ -4191,7 +4288,7 @@ footer {
   }
 
   .info__item > p {
-    /* width: 330px; */
+    width: 330px;
     font-size: 15px;
     margin: 10px 0px;
   }
@@ -4219,7 +4316,8 @@ footer {
 
   /* values */
   .values {
-    padding: 150px 0px 0px 0px;
+    padding: 80px 0px 0px 0px;
+    margin-top: 0;
   }
 
   .values__inner {

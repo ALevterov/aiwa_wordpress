@@ -1,11 +1,40 @@
+let map
+let mobileMap
+function initMap() {
+  map = new google.maps.Map(document.querySelector('.map__pc'), {
+    center: { lat: -34.397, lng: 150.644 },
+    // markers: [
+    //   {
+    //     latitude: 55.19657858982631,
+    //     longitude: 25.11689772924049,
+    //     icon: '../image/pin.png',
+    //   },
+    // ],
+    zoom: 8,
+  })
+  mobileMap = new google.maps.Map(document.querySelector('.map__mobile'), {
+    center: { lat: 55.19657858982631, lng: 25.11689772924049 },
+    // markers: [
+    //   {
+    //     latitude: 55.19657858982631,
+    //     longitude: 25.11689772924049,
+    //     icon: '../image/pin.png',
+    //   },
+    // ],
+    zoom: 8,
+  })
+}
+
+window.initMap = initMap
+
 let carsPicker = document.getElementById('cars_picker')
 
 let pictureList = {}
 let priceList = {}
-for(let i=0;i<carsPicker.childNodes.length;i++) {
+for (let i = 0; i < carsPicker.childNodes.length; i++) {
   let item = carsPicker.childNodes[i]
 
-  if(i===0 || item.nodeName === '#text') continue
+  if (i === 0 || item.nodeName === '#text') continue
 
   let imgUrl = item.dataset.image
   let name = item.value
@@ -15,192 +44,189 @@ for(let i=0;i<carsPicker.childNodes.length;i++) {
   priceList[name] = price
 }
 
-
 function begin_date() {
-    let input_taker = document.getElementById('datepicker').value
-    document.getElementById('begin__date').innerHTML = input_taker
-    return input_taker
-  }
-  
-  function end_date() {
-    let input_taker = document.getElementById('datepicker2').value
-    document.getElementById('end__date').innerHTML = input_taker
-  
-    return input_taker
-  }
-  
-  function getPrice() {    
-    let carsPicker = document.getElementById('cars_picker')
-    let input_taker = carsPicker.value
+  let input_taker = document.getElementById('datepicker').value
+  document.getElementById('begin__date').innerHTML = input_taker
+  return input_taker
+}
 
-    carsPicker.childNodes.forEach(option => {
+function end_date() {
+  let input_taker = document.getElementById('datepicker2').value
+  document.getElementById('end__date').innerHTML = input_taker
 
-    })
+  return input_taker
+}
 
-    // let priceList = {
-    //   'Rolls Royce Cullinan': '4500',
-    //   'Rolls Royce Dawn': '3600',
-    //   'Bentley Bentayga': '4000',
-    //   'Ferrari F8': '4000',
-    //   'Ferrari Portofino': '3600',
-    //   'Lamborghini URUS': '4500',
-    //   'Lamborghini Huracan 2022': '3300',
-    //   'Lamborghini Huracan 2023': '4500',
-    //   'Mercedes G63': '2000',
-    //   'Porsche 911': '1800',
-    //   'Porsche Cayman 718': '3200',
-    // }
-    return priceList[input_taker]
-  }
-  
-  function getDaysDif(date1, date2) {
-    return (date2 - date1) / (60 * 60 * 24 * 1000)
-  }
-      $.datepicker.regional['ru'] = {
-        closeText: 'Закрыть',
-        prevText: 'Предыдущий',
-        nextText: 'Следующий',
-        currentText: 'Сегодня',
-        monthNames: [
-          'Январь',
-          'Февраль',
-          'Март',
-          'Апрель',
-          'Май',
-          'Июнь',
-          'Июль',
-          'Август',
-          'Сентябрь',
-          'Октябрь',
-          'Ноябрь',
-          'Декабрь',
-        ],
-        monthNamesShort: [
-          'Янв',
-          'Фев',
-          'Мар',
-          'Апр',
-          'Май',
-          'Июн',
-          'Июл',
-          'Авг',
-          'Сен',
-          'Окт',
-          'Ноя',
-          'Дек',
-        ],
-        dayNames: [
-          'воскресенье',
-          'понедельник',
-          'вторник',
-          'среда',
-          'четверг',
-          'пятница',
-          'суббота',
-        ],
-        dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
-        dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-        weekHeader: 'Не',
-        dateFormat: 'dd.mm.yy',
-        firstDay: 1,
-        isRTL: false,
-        showMonthAfterYear: false,
-        yearSuffix: '',
-      }
-       $.datepicker.setDefaults($.datepicker.regional['ru'])
+function getPrice() {
+  let carsPicker = document.getElementById('cars_picker')
+  let input_taker = carsPicker.value
 
-  let carsSelect = document.getElementById('cars_picker')
-  let datePickerBegin = document.getElementById('datepicker')
-  let datePickerEnd = document.getElementById('datepicker2')
-  
-  function calculateCost() {
-    let price = getPrice()
-    let beginDateStr = begin_date()
-    let endDateStr = end_date()
-    let endPrice = document.getElementById('end__price')
-    let totalDays = document.getElementById('end__day')
+  carsPicker.childNodes.forEach(option => {})
 
-    if (!beginDateStr || !endDateStr || !price) {
-      endPrice.innerHTML = '?'
-      totalDays.innerHTML = '?'
-      return
-    }
-    let splittedBegin = beginDateStr.split('.')
-    let splittedEnd = endDateStr.split('.')
-  
-    let beginDate = new Date(splittedBegin[2], splittedBegin[1], splittedBegin[0])
-    let endDate = new Date(splittedEnd[2], splittedEnd[1], splittedEnd[0])
-  
-    let daysDif = getDaysDif(beginDate, endDate)
-  
-    if (daysDif <= 0) {
-      endPrice.innerHTML = '?'
-      totalDays.innerHTML = '?'
-      return
-    }
-    let totalCost = daysDif * +price + 5000
-    
-    endPrice.innerHTML = totalCost
-    totalDays.innerHTML = daysDif
+  // let priceList = {
+  //   'Rolls Royce Cullinan': '4500',
+  //   'Rolls Royce Dawn': '3600',
+  //   'Bentley Bentayga': '4000',
+  //   'Ferrari F8': '4000',
+  //   'Ferrari Portofino': '3600',
+  //   'Lamborghini URUS': '4500',
+  //   'Lamborghini Huracan 2022': '3300',
+  //   'Lamborghini Huracan 2023': '4500',
+  //   'Mercedes G63': '2000',
+  //   'Porsche 911': '1800',
+  //   'Porsche Cayman 718': '3200',
+  // }
+  return priceList[input_taker]
+}
+
+function getDaysDif(date1, date2) {
+  return (date2 - date1) / (60 * 60 * 24 * 1000)
+}
+$.datepicker.regional['ru'] = {
+  closeText: 'Закрыть',
+  prevText: 'Предыдущий',
+  nextText: 'Следующий',
+  currentText: 'Сегодня',
+  monthNames: [
+    'Январь',
+    'Февраль',
+    'Март',
+    'Апрель',
+    'Май',
+    'Июнь',
+    'Июль',
+    'Август',
+    'Сентябрь',
+    'Октябрь',
+    'Ноябрь',
+    'Декабрь',
+  ],
+  monthNamesShort: [
+    'Янв',
+    'Фев',
+    'Мар',
+    'Апр',
+    'Май',
+    'Июн',
+    'Июл',
+    'Авг',
+    'Сен',
+    'Окт',
+    'Ноя',
+    'Дек',
+  ],
+  dayNames: [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота',
+  ],
+  dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+  dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+  weekHeader: 'Не',
+  dateFormat: 'dd.mm.yy',
+  firstDay: 1,
+  isRTL: false,
+  showMonthAfterYear: false,
+  yearSuffix: '',
+}
+$.datepicker.setDefaults($.datepicker.regional['ru'])
+
+let carsSelect = document.getElementById('cars_picker')
+let datePickerBegin = document.getElementById('datepicker')
+let datePickerEnd = document.getElementById('datepicker2')
+
+function calculateCost() {
+  let price = getPrice()
+  let beginDateStr = begin_date()
+  let endDateStr = end_date()
+  let endPrice = document.getElementById('end__price')
+  let totalDays = document.getElementById('end__day')
+
+  if (!beginDateStr || !endDateStr || !price) {
+    endPrice.innerHTML = '?'
+    totalDays.innerHTML = '?'
     return
   }
-  
-  $('#datepicker').datepicker({
-    firstDay: 1,
-    showOtherMonths: true,
-    changeMonth: true,
-    changeYear: true,
-    dateFormat: 'dd.mm.yy',
-  })
-  
-  $('.date').mousedown(function () {
-    $('.ui-datepicker').addClass('active')
-    // calculateCost()
-  })
-  
-  $('#datepicker2').datepicker({
-    firstDay: 1,
-    showOtherMonths: true,
-    changeMonth: true,
-    changeYear: true,
-    dateFormat: 'dd.mm.yy',
-  })
-  
-  $('.date2').mousedown(function () {
-    $('.ui-datepicker').addClass('active')
-    // calculateCost()
-  })
-  
-  $('#datepicker3').datepicker({
-    firstDay: 1,
-    showOtherMonths: true,
-    changeMonth: true,
-    changeYear: true,
-    dateFormat: 'dd.mm.yy',
-  })
-  
-  $('.date3').mousedown(function () {
-    $('.ui-datepicker').addClass('active')
-  })
-  
-  $('#datepicker4').datepicker({
-    firstDay: 1,
-    showOtherMonths: true,
-    changeMonth: true,
-    changeYear: true,
-    dateFormat: 'dd.mm.yy',
-  })
-  
-  $('.date4').mousedown(function () {
-    $('.ui-datepicker').addClass('active')
-  })
-  $('.burger, .overlay').click(function(){
-    $('.burger').toggleClass('clicked');
-    $('.overlay').toggleClass('show');
-    $('nav').toggleClass('show');
-    $('body').toggleClass('overflow');
-  });
-  let cars_btn = document.querySelectorAll('.cars__btn')
+  let splittedBegin = beginDateStr.split('.')
+  let splittedEnd = endDateStr.split('.')
+
+  let beginDate = new Date(splittedBegin[2], splittedBegin[1], splittedBegin[0])
+  let endDate = new Date(splittedEnd[2], splittedEnd[1], splittedEnd[0])
+
+  let daysDif = getDaysDif(beginDate, endDate)
+
+  if (daysDif <= 0) {
+    endPrice.innerHTML = '?'
+    totalDays.innerHTML = '?'
+    return
+  }
+  let totalCost = daysDif * +price + 5000
+
+  endPrice.innerHTML = totalCost
+  totalDays.innerHTML = daysDif
+  return
+}
+
+$('#datepicker').datepicker({
+  firstDay: 1,
+  showOtherMonths: true,
+  changeMonth: true,
+  changeYear: true,
+  dateFormat: 'dd.mm.yy',
+})
+
+$('.date').mousedown(function () {
+  $('.ui-datepicker').addClass('active')
+  // calculateCost()
+})
+
+$('#datepicker2').datepicker({
+  firstDay: 1,
+  showOtherMonths: true,
+  changeMonth: true,
+  changeYear: true,
+  dateFormat: 'dd.mm.yy',
+})
+
+$('.date2').mousedown(function () {
+  $('.ui-datepicker').addClass('active')
+  // calculateCost()
+})
+
+$('#datepicker3').datepicker({
+  firstDay: 1,
+  showOtherMonths: true,
+  changeMonth: true,
+  changeYear: true,
+  dateFormat: 'dd.mm.yy',
+})
+
+$('.date3').mousedown(function () {
+  $('.ui-datepicker').addClass('active')
+})
+
+$('#datepicker4').datepicker({
+  firstDay: 1,
+  showOtherMonths: true,
+  changeMonth: true,
+  changeYear: true,
+  dateFormat: 'dd.mm.yy',
+})
+
+$('.date4').mousedown(function () {
+  $('.ui-datepicker').addClass('active')
+})
+$('.burger, .overlay').click(function () {
+  $('.burger').toggleClass('clicked')
+  $('.overlay').toggleClass('show')
+  $('nav').toggleClass('show')
+  $('body').toggleClass('overflow')
+})
+let cars_btn = document.querySelectorAll('.cars__btn')
 let cars_item = document.querySelectorAll('.cars__item')
 let cars_image = document.querySelectorAll('.cars__image')
 let cars_open = document.querySelectorAll('.cars__open')
@@ -280,42 +306,42 @@ for (let index = 0; index < cond_item.length; index++) {
     }
   })
 }
-let values_btn = document.querySelectorAll(".values__btn")
-let values_item = document.querySelectorAll(".values__item")
-let values_image = document.querySelectorAll(".values__image")
-let values_open = document.querySelectorAll(".values__open")
-let values_close = document.querySelectorAll(".values__close")
-let values_shadow = document.querySelectorAll(".values__shadow")
+let values_btn = document.querySelectorAll('.values__btn')
+let values_item = document.querySelectorAll('.values__item')
+let values_image = document.querySelectorAll('.values__image')
+let values_open = document.querySelectorAll('.values__open')
+let values_close = document.querySelectorAll('.values__close')
+let values_shadow = document.querySelectorAll('.values__shadow')
 
-let values_blur = document.querySelectorAll(".values__blur")
-let values_text_open = document.querySelectorAll(".values__text__open")
+let values_blur = document.querySelectorAll('.values__blur')
+let values_text_open = document.querySelectorAll('.values__text__open')
 
 for (let index = 0; index < values_item.length; index++) {
-    values_btn[index].addEventListener('click', () => {
-        if (values_item[index].classList.contains("values__down")) {
-            values_item[index].classList.remove("values__down")
-            values_image[index].classList.remove("values__cross")
+  values_btn[index].addEventListener('click', () => {
+    if (values_item[index].classList.contains('values__down')) {
+      values_item[index].classList.remove('values__down')
+      values_image[index].classList.remove('values__cross')
 
-            values_open[index].style.display = "block"
-            values_close[index].style.display = "none"
+      values_open[index].style.display = 'block'
+      values_close[index].style.display = 'none'
 
-            values_blur[index].style.display = "grid"
-            values_text_open[index].style.display = "none"
+      values_blur[index].style.display = 'grid'
+      values_text_open[index].style.display = 'none'
 
-            values_shadow[index].style.display = "block"
-        } else {
-            values_item[index].classList.add("values__down")
-            values_image[index].classList.add("values__cross")
+      values_shadow[index].style.display = 'block'
+    } else {
+      values_item[index].classList.add('values__down')
+      values_image[index].classList.add('values__cross')
 
-            values_open[index].style.display = "none"
-            values_close[index].style.display = "block"
+      values_open[index].style.display = 'none'
+      values_close[index].style.display = 'block'
 
-            values_blur[index].style.display = "none"
-            values_text_open[index].style.display = "grid"
+      values_blur[index].style.display = 'none'
+      values_text_open[index].style.display = 'grid'
 
-            values_shadow[index].style.display = "none"
-        }
-    }) 
+      values_shadow[index].style.display = 'none'
+    }
+  })
 }
 let scrollObject = document.getElementById('car')
 let mainBtn = document.querySelector('.main__btn')
@@ -493,6 +519,7 @@ if (window.innerWidth >= 1024) {
 
       if (scrollTop > screenHeight * 4.4) {
         parallaxContainer.style.opacity = 0
+        parallaxContainer.style.visibility = 'hidden'
       }
 
       if (scrollTop < screenHeight * 3.4) {
@@ -501,6 +528,7 @@ if (window.innerWidth >= 1024) {
         bgHome.style.position = 'fixed'
         scrollObject.style.top = 0
         bgHome.style.top = 0
+        parallaxContainer.style.visibility = 'visible'
       }
     }
     // if (scrollTop < screenHeight || scrollTop > screenHeight * 5) {
@@ -526,7 +554,6 @@ if (window.innerWidth >= 1024) {
   })
 }
 
-
 // let pictureList = {
 //     'Rolls Royce Dawn':
 //       'image/form/Rolls-Royce-Cullinan-1-FW-DAloFK-transformed.png',
@@ -543,67 +570,72 @@ if (window.innerWidth >= 1024) {
 //     'Porsche Cayman 718': 'image/form/Rolls-Royce-Cullinan-1-(8)-transformed.png',
 //     'Porsche Cayman 718': 'image/form/Rolls-Royce-Cullinan-2-(8)-transformed.png',
 //   }
-  
-  let change_text = document.querySelector('.change_text')
-  let change_text_calc = document.querySelector('.change_text_calc')
-  // let calc__select = document.querySelector('.calc__select')
-  // let carsPicker = document.querySelector('#cars_picker')
-  // calc__select.addEventListener('click', () => {
-  //   carsPicker.change()
-  // })
-  
-  $('#rent_change').change(function () {
-    let val = $('#rent_change').val()
-    change_text.innerHTML = val
-    $('.change__rent__car').attr('src', pictureList[val])
-  })
-  
-  $('#cars_picker').change(function () {
-    let val = $('#cars_picker').val()
-    change_text_calc.innerHTML = val
-    $('.change__calc__car').attr('src', pictureList[val])
-  })
+
+let change_text = document.querySelector('.change_text')
+let change_text_calc = document.querySelector('.change_text_calc')
+// let calc__select = document.querySelector('.calc__select')
+// let carsPicker = document.querySelector('#cars_picker')
+// calc__select.addEventListener('click', () => {
+//   carsPicker.change()
+// })
+
+$('#rent_change').change(function () {
+  let val = $('#rent_change').val()
+  change_text.innerHTML = val
+  $('.change__rent__car').attr('src', pictureList[val])
+})
+
+$('#cars_picker').change(function () {
+  let val = $('#cars_picker').val()
+  change_text_calc.innerHTML = val
+  $('.change__calc__car').attr('src', pictureList[val])
+})
 
 // @@@ photogalery block begin
 
-  let galeryModals = document.querySelectorAll('.modal-photogalery')
-  let numberOfGalerys = galeryModals.length
+let galeryModals = document.querySelectorAll('.modal-photogalery')
+let numberOfGalerys = galeryModals.length
 
-  let slideIndex = 1;
+let slideIndex = 1
 
-  for(let i=1; i <= numberOfGalerys;i++) {
-    showSlides(i, 1)
-  }
-  
-  function plusSlides(cardIndex, n) {
-    console.log('plusSlides', cardIndex);
-    showSlides(cardIndex, slideIndex += n);
-  }
- 
-  
-  function currentSlide(cardIndex, n) {
-    console.log('currentSlide', cardIndex);
-    showSlides(cardIndex, slideIndex = n);
-  } 
-  
-  
-  function showSlides(cardIndex, n) {
-     console.log('showSlides', cardIndex);
-    let i;
-    let slides = cardIndex === 1 ? document.getElementsByClassName("mySlides") : document.getElementsByClassName(`mySlides${cardIndex}`);
-    let dots = document.getElementsByClassName("demo");
-    let captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
-  }
+for (let i = 1; i <= numberOfGalerys; i++) {
+  showSlides(i, 1)
+}
 
-  // @@@ photogalery block end
+function plusSlides(cardIndex, n) {
+  console.log('plusSlides', cardIndex)
+  showSlides(cardIndex, (slideIndex += n))
+}
+
+function currentSlide(cardIndex, n) {
+  console.log('currentSlide', cardIndex)
+  showSlides(cardIndex, (slideIndex = n))
+}
+
+function showSlides(cardIndex, n) {
+  console.log('showSlides', cardIndex)
+  let i
+  let slides =
+    cardIndex === 1
+      ? document.getElementsByClassName('mySlides')
+      : document.getElementsByClassName(`mySlides${cardIndex}`)
+  let dots = document.getElementsByClassName('demo')
+  let captionText = document.getElementById('caption')
+  if (n > slides.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none'
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '')
+  }
+  slides[slideIndex - 1].style.display = 'block'
+  dots[slideIndex - 1].className += ' active'
+  captionText.innerHTML = dots[slideIndex - 1].alt
+}
+
+// @@@ photogalery block end

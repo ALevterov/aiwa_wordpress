@@ -17,6 +17,8 @@
     />
     <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</script>
+
     <!-- <script src="./js/calculator.js" defer></script> -->
   </head>
   <body>
@@ -404,7 +406,7 @@
             </div>
           </div>
         </div>
-         <div class="swiper" style="overflow: visible">
+         <div class="swiper" style="overflow: unset">
             <div class="cars__inner__mobile">
             <?php
             						$loop = CFS()->get('card');
@@ -496,7 +498,7 @@
                     </tr>
                     <tr>
                       <td>Тип двигателя:</td>
-                      <td><?= $row[' 	engine_type '] ?></td>
+                      <td><?= $row['engine_type'] ?></td>
                     </tr>
                     <tr>
                       <td>Привод:</td>
@@ -551,11 +553,13 @@
         <div class="calc__inner">
           <div class="calc__cars">
             <h3 class="change_text_calc">Rolls Royce Cullinan</h3>
-            <img
-              class="calc__image change__calc__car"
+						<div  class="calc__image change__calc__car">            <img
+              class="change__calc__car"
               src="<?php bloginfo('template_url'); ?>/assets/image/form/Rolls-Royce-Cullinan-1-transformed.png"
               alt=""
             />
+						<div class="calc__image_shadow"></div>
+					</div>
             <div class="calc__select">
               <!-- <h4>Выбрать другой автомобиль</h4> -->
               <select id="cars_picker" onchange="calculateCost()">
@@ -1731,6 +1735,9 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
         <h3 class="info__logo">О компании “AIWA Rent a Car”</h3>
       </div>
       <div class="info__bg">
+			<video autoplay muted loop id="myVideo">
+  <source  src="<?php bloginfo('template_url'); ?>/assets/image/video.mp4" type="video/mp4">
+</video>
         <div class="container">
           <div class="info__inner">
             <div class="info__item">
@@ -2402,7 +2409,13 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
           </div>
         </div>
         <div class="contact__map">
-          <iframe
+          <!-- <div
+            class="map__mobile"
+            width="396"
+            height="396"
+            style="border: 0"
+          ></div> -->
+					<iframe
             class="map__mobile"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7225.099024195213!2d55.1900107629645!3d25.11710640000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bbc47b308f5%3A0x3bb9ee96f7b06ad0!2sDeyaar%20Development%20PJSC%20(Head%20office)!5e0!3m2!1sru!2sru!4v1674812214112!5m2!1sru!2sru"
             width="396"
@@ -2438,7 +2451,12 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
               </a>
             </div>
           </div>
-          <iframe
+          <!-- <div
+            class="map__pc"
+            width="1194"
+            height="676"
+          ></div> -->
+					<iframe
             class="map__pc"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7225.099024195213!2d55.1900107629645!3d25.11710640000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bbc47b308f5%3A0x3bb9ee96f7b06ad0!2sDeyaar%20Development%20PJSC%20(Head%20office)!5e0!3m2!1sru!2sru!4v1674812214112!5m2!1sru!2sru"
             width="1194"
@@ -2511,5 +2529,8 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
         },
       })
     </script>
+				<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx3usH0OxGDYgBSR0jzMe3H2DwJ3Ia8Rc&libraries=geometry&callback=initMap">
+		</script>
   </body>
 </html>
