@@ -436,6 +436,9 @@ if (window.innerWidth >= 1024) {
           (10 * (screenHeight * 0.2)) / (scrollTop - screenHeight * 1.9)
         }px`
       }
+      // if(scrollTop > screenHeight * 2) {
+      //   rent.style.opacity = 1
+      // }
       if (scrollTop < screenHeight * 1.9) {
         aiwa.style.opacity = 0
         aiwa.style.marginTop = '100px'
@@ -478,26 +481,21 @@ if (window.innerWidth >= 1024) {
       if (scrollTop > screenHeight * 2.4) {
         mainBtn.style.opacity = 1
       }
-      if (scrollTop < screenHeight * 2.8) {
+      if (scrollTop < screenHeight * 3.4) {
         parallaxContainer.style.opacity = 0.999
       }
-      if (scrollTop > screenHeight * 2.8 && scrollTop < screenHeight * 3.8) {
+      if (scrollTop > screenHeight * 3.4 && scrollTop < screenHeight * 4.4) {
         parallaxContainer.style.opacity = `${Math.pow(
-          screenHeight / (scrollTop - screenHeight * 1.8),
+          screenHeight / (scrollTop - screenHeight * 2.4),
           8
         )}`
       }
 
-      if (scrollTop > screenHeight * 3.8) {
+      if (scrollTop > screenHeight * 4.4) {
         parallaxContainer.style.opacity = 0
       }
-      if (scrollTop > screenHeight * 4.2) {
-        // parallaxContainer.style.display = 'none'
-      }
-      if (scrollTop < screenHeight * 4.2) {
-        // parallaxContainer.style.display = 'block'
-      }
-      if (scrollTop < screenHeight * 2.8) {
+
+      if (scrollTop < screenHeight * 3.4) {
         // parallaxContainer.style.display = 'block'
         scrollObject.style.position = 'fixed'
         bgHome.style.position = 'fixed'

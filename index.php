@@ -43,7 +43,7 @@
           </a>
         </div>
       </div>
-      <div class="gradient"></div>
+      <!-- <div class="gradient"></div> -->
     </article>
     <article class="parallax_container">
       <div
@@ -52,6 +52,7 @@
         style="background-image: url('<?php bloginfo('template_url'); ?>/assets/image/kaif/desert-bg.jpg')"
       >
         <div class="gradient"></div>
+        <div class="gradient2"></div>
         <img
           class="car__rolls"
           id="car__rolls"
@@ -384,7 +385,7 @@
                 </tbody>
               </table>
             </div>
-            <a href="#item1" class="item__circle cars__btn">
+            <a class="item__circle cars__btn">
               <h4 class="cars__open">подробнее</h4>
               <h4 class="cars__close" style="display: none">скрыть</h4>
               <img class="cars__image" src="<?php bloginfo('template_url'); ?>/assets/image/icon/cross.svg" alt="" />
@@ -566,7 +567,7 @@
                 foreach($loop as $card) {
                 ?>
                    <option data-image="<?= $card['main_photo'] ?>" data-price="<?= $card['price'] ?>" value="<?= $card['car_name'] ?>">
-                    <?= $card['car_name'] ?>
+                   <?= $card['car_name'] ?>
                 </option>
                 <?php
                 }
@@ -734,7 +735,7 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
                 foreach($loop as $card) {
                 ?>
                    <option value="<?= $card['car_name'] ?>">
-                    <?= $card['car_name'] ?>
+                   <?= $card['car_name'] ?>
                 </option>
                 <?php
                 }
