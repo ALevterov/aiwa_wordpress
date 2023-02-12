@@ -4279,7 +4279,7 @@ footer {
     overflow: -moz-scrollbars-none;
   }
   .info__inner__mobile > .info__item {
-    margin-left: 0 !important;
+    margin-left: 20px !important;
   }
   .info__item {
     padding-top: 20px;
