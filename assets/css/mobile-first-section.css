@@ -106,7 +106,7 @@
 @media screen and (max-width: 540px) {
   .main__logo > span {
     font-weight: 500;
-    font-size: 30px;
-    line-height: 62px;
+    font-size: 30px !important;
+    line-height: 62px !important;
   }
 }
