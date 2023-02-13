@@ -37,7 +37,6 @@
               <h3 class="kaif__dybai">
                 Аренда автомобилей класса Люкс в Дубае
               </h3>
-            </div>
           </div>
           <a href="#car" class="kaif__scroll">
             <img src="<?php bloginfo('template_url'); ?>/assets/image/kaif/cross.svg" alt="" />
@@ -91,6 +90,9 @@
                       <img src="<?php bloginfo('template_url'); ?>/assets/image/icon/facebook.svg" alt="" />
                     </a>
                   </div>
+                  <div class="gtranslate_menu">
+              <?php echo do_shortcode('[gtranslate]'); ?>
+            </div>
                 </div>
               </div>
             </div>
@@ -139,7 +141,9 @@
                   <a href="#rent" class="nav__booking">
                     <span>Забронировать авто</span>
                   </a>
-
+                  <div class="gtranslate_menu">
+              <?php echo do_shortcode('[gtranslate]'); ?>
+            </div>
                   <div class="group__social">
                     <a
                       href="https://t.me/aiwarent"
