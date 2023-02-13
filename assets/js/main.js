@@ -226,6 +226,18 @@ $('.burger, .overlay').click(function () {
   $('nav').toggleClass('show')
   $('body').toggleClass('overflow')
 })
+
+const burgerLinks = document.querySelectorAll('.burger_menu_link')
+
+burgerLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    $('.burger').toggleClass('clicked')
+    $('.overlay').toggleClass('show')
+    $('nav').toggleClass('show')
+    $('body').toggleClass('overflow')
+  })
+})
+
 let cars_btn = document.querySelectorAll('.cars__btn')
 let cars_item = document.querySelectorAll('.cars__item')
 let cars_image = document.querySelectorAll('.cars__image')

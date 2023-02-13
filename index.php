@@ -2499,15 +2499,15 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
         </a>
       </div>
       <ul class="main1">
-        <li><a href="#cars">Наши автомобили</a></li>
-        <li><a href="#calc">Калькулятор поездки</a></li>
-        <li><a href="#rent">Форма для заявки на аренду</a></li>
-        <li><a href="#how">Как арендовать автомобиль</a></li>
-        <li><a href="#cond">Условия аренды</a></li>
-        <li><a href="#info">О компании</a></li>
-        <li><a href="#values">Наши ценности</a></li>
-        <li><a href="#advantages">Наши преимущества</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li class="burger_menu_link"><a href="#cars">Наши автомобили</a></li>
+        <li class="burger_menu_link"><a href="#calc">Калькулятор поездки</a></li>
+        <li class="burger_menu_link"><a href="#rent">Форма для заявки на аренду</a></li>
+        <li class="burger_menu_link"><a href="#how">Как арендовать автомобиль</a></li>
+        <li class="burger_menu_link"><a href="#cond">Условия аренды</a></li>
+        <li class="burger_menu_link"><a href="#info">О компании</a></li>
+        <li class="burger_menu_link"><a href="#values">Наши ценности</a></li>
+        <li class="burger_menu_link"><a href="#advantages">Наши преимущества</a></li>
+        <li class="burger_menu_link"><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
     <!-- end burger-menu -->
