@@ -4829,3 +4829,12 @@ footer {
     margin-left: 0px !important;
   }
 }
+@media screen and (max-width: 360px) {
+  .nav__booking {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  header > .container {
+    padding: 0 20px;
+  }
+}
