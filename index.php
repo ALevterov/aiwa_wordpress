@@ -718,7 +718,7 @@ if(isset($_POST['phone__rent']) and isset($_POST['email__rent']) and isset($_POS
 		";
 		wp_mail($email_admin, "Заказ", $message, $headers);
 		wp_mail('alexanderlevterov@gmail.com', 'заказ', 'привет', 'From: example@mail.com \r\n');
-message_to_telegram('email: '. $email . '\r\n' . 'телефон: ' . '\r\n' . $phone .   '\r\nИмя: ' . $name  . '\r\nКомментарий: ' . $comm );		
+message_to_telegram('email: '. $email . 'телефон: ' . $phone .   'Имя: ' . $name  . 'Комментарий: ' . $comm );		
 echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {display: none;} </style>";
 }
 

@@ -3695,6 +3695,11 @@ footer {
     width: 100%;
   }
 }
+@media screen and (max-width: 1400px) {
+  .main__logo__position {
+    top: 36vh;
+  }
+}
 @media (max-width: 1140px) {
   .main__logo {
     font-size: 48px;
