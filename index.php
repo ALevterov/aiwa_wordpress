@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -37,7 +37,6 @@
               <h3 class="kaif__dybai">
                 Аренда автомобилей класса Люкс в Дубае
               </h3>
-            </div>
           </div>
           <a href="#car" class="kaif__scroll">
             <img src="<?php bloginfo('template_url'); ?>/assets/image/kaif/cross.svg" alt="" />
@@ -91,6 +90,9 @@
                       <img src="<?php bloginfo('template_url'); ?>/assets/image/icon/facebook.svg" alt="" />
                     </a>
                   </div>
+                  <div class="gtranslate_menu notranslate">
+              <?php echo do_shortcode('[gtranslate]'); ?>
+            </div>
                 </div>
               </div>
             </div>
@@ -139,7 +141,9 @@
                   <a href="#rent" class="nav__booking">
                     <span>Забронировать авто</span>
                   </a>
-
+                  <div class="gtranslate_menu">
+              <?php echo do_shortcode('[gtranslate]'); ?>
+            </div>
                   <div class="group__social">
                     <a
                       href="https://t.me/aiwarent"
@@ -195,7 +199,7 @@
     </section>
 
     <section class="cars" id="cars">
-      <img class="effect__sand" src="<?php bloginfo('template_url'); ?>/assets/image/effect/effect_sand.png" alt="" />
+      <img class="effect__sand" src="<?php bloginfo('template_url'); ?>/assets/image/effect/sand2.png" alt="" />
       <div class="container">
         <h2 class="cars__our">Наши автомобили</h2>
         <div class="cars__swipe">
@@ -387,7 +391,7 @@
                 </tbody>
               </table>
             </div>
-            <a class="item__circle cars__btn">
+            <a href="#item<?= $cardIndex ?>" class="item__circle cars__btn">
               <h4 class="cars__open">подробнее</h4>
               <h4 class="cars__close" style="display: none">скрыть</h4>
               <img class="cars__image" src="<?php bloginfo('template_url'); ?>/assets/image/icon/cross.svg" alt="" />
@@ -544,7 +548,7 @@
     <div class="calc" id="calc">
       <img
         class="effect__sand__right"
-        src="<?php bloginfo('template_url'); ?>/assets/image/effect/effect_sand_right.png"
+        src="<?php bloginfo('template_url'); ?>/assets/image/effect/sand1.png"
         alt=""
       />
       <div class="container">
@@ -631,8 +635,8 @@
             <div class="calc__full">
               <div>
                 <h3><span id="end__day">10</span> дней</h3>
-                <h4>
-                  ( <span id="begin__date">20.01.2022</span> -
+                <h4 class="">
+                  ( <span  id="begin__date">20.01.2022</span> -
                   <span id="end__date">30.01.2022</span>)
                 </h4>
               </div>
@@ -775,7 +779,7 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
                   id="datepicker4"
                   class="date4"
                   readonly="readonly"
-                  placeholder="выберите дату "
+                  placeholder="выберите дату"
                 />
                 <img src="<?php bloginfo('template_url'); ?>/assets/image/icon/cross_date.svg" alt="" />
               </div>
@@ -1735,7 +1739,7 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
         <h3 class="info__logo">О компании “AIWA Rent a Car”</h3>
       </div>
       <div class="info__bg">
-			<video autoplay muted loop id="myVideo">
+			<video autoplay playsinline="" muted loop id="myVideo">
   <source  src="<?php bloginfo('template_url'); ?>/assets/image/video.mp4" type="video/mp4">
 </video>
         <div class="container">
@@ -2388,7 +2392,10 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
           <div>
             <h4>Адрес:</h4>
             <h5>UAE, Dubai, AI Barsha 1, Deyaar Head office building, 401</h5>
-            <h5>971 4 523 5050, 971 58 5731415, 800 (AIWA) 2492</h5>
+            <div class="contact-phone">
+              <a href="tel: +97145235050">+971 4 523 5050</a>, 
+              <a href="tel: +971585731415">+971 5 857 31415</a>, 800 (AIWA) 2492
+            </div>
           </div>
           <div class="social_container">
             <a href="https://t.me/aiwarent" target="_blank">

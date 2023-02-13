@@ -75,6 +75,9 @@
 .main__logo {
   position: relative;
   text-align: center;
+  font-size: 113.218px;
+  font-weight: 500;
+  line-height: 133px;
   /* font-style: normal;
   font-weight: 700;
   font-size: 113.218px;
@@ -108,9 +111,8 @@
   text-transform: uppercase;
 
   font-style: normal;
-  font-weight: 700;
-  font-size: 113.218px;
-  line-height: 133px;
+  /* font-size: 113.218px;
+  line-height: 133px; */
   /* background: radial-gradient(
       24.8% 120.54% at 67.74% 108.14%,
       rgba(0, 0, 0, 0.6) 0%,

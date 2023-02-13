@@ -11,7 +11,44 @@ Version: 0.1
   margin: 0;
   box-sizing: border-box;
 }
+.gtranslate_menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.gtranslate_menu > a.translate-btn, span.lang-divider {
+  font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: #959595;
 
+text-decoration: none;
+outline: none;
+
+}
+.gtranslate_menu > .translate-btn.selected {
+  font-weight: 700;
+  color: #fff;
+}
+.lang-divider {
+  margin: 0 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .gtranslate_menu >  a.translate-btn, span.lang-divider {
+  font-size: 12px;
+  /* line-height: 15px; */
+  color: #959595;
+  }
+  .lang-divider {
+  margin: 0 3px;
+}
+.nav__booking > span {
+  font-size: 7px !important;
+  line-height: 12 !important;
+}
+}
 /* scroll */
 
 ::-webkit-scrollbar {
@@ -30,6 +67,7 @@ Version: 0.1
 }
 
 /* end scroll */
+div.skiptranslate,#google_translate_element2{display:none!important;}body{top:0!important;}
 
 .logo__pc {
   display: block;
@@ -37,6 +75,8 @@ Version: 0.1
 
 .logo__mobile {
   display: none;
+  width: 89px;
+  height: 17px;
 }
 
 .mobile__transfer {
@@ -329,17 +369,26 @@ Version: 0.1
 /* effect */
 .effect__sand {
   position: absolute;
-  z-index: -2;
-  display: none;
+  left: -1000px;
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+transform: rotate(82.58deg);
+width: 2384.35px;
+height: 1590.76px;
+left: -1600px;
+
 }
 
 .effect__sand__right {
   position: absolute;
-  right: 0;
+  right: -1200px;
   z-index: -2;
-  top: -990px;
-  width: 542px;
-  height: 2105px;
+  top: -800px;
+  width: 1914.07px;
+height: 1275.59px;
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+transform: rotate(-99.9deg);
 }
 
 .advantages__effect {
@@ -389,7 +438,7 @@ Version: 0.1
   border-radius: 10px;
   box-shadow: 0 4px 40px -8px rgba(0, 0, 0, 0.2);
   opacity: 0;
-  z-index: 60 !important;
+  z-index: 109 !important;
 }
 
 .ui-datepicker.active {
@@ -1017,6 +1066,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  padding-right: 100px;
 }
 
 .header__nav {
@@ -1041,8 +1092,15 @@ header {
   font-style: normal;
   font-weight: 400;
   line-height: 26px;
-}
+  white-space: nowrap;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav__booking > span {
+  color: #fff !important;
+}
 .group__social {
   margin: 0px 75px;
 }
@@ -2660,6 +2718,7 @@ button.btn__thx {
   padding-bottom: 40px;
 
   position: relative;
+  overflow: hidden;
 }
 .info__bg > .container {
   position: relative;
@@ -3591,7 +3650,7 @@ footer {
   }
   /* end how */
 }
-@media screen and (max-width: 1281px) {
+@media screen and (max-width: 1600px) {
   .kaif__scroll {
     bottom: -60px;
   }
@@ -3600,7 +3659,11 @@ footer {
     line-height: 103px;
   }
   .main__logo__position {
-    top: 230px;
+<<<<<<< HEAD
+    top: 150px; 
+=======
+    top: 150px;
+>>>>>>> 1985bc16071fbabfc4e5691bbcf7e3c5b1ef231c
   }
   .calc {
     margin-top: 70px;
@@ -3676,9 +3739,10 @@ footer {
 
   .nav__booking {
     font-size: 7px;
-    padding: 0px 20px;
-    height: 28.29px;
-    margin-right: 100px;
+    padding: 0px 12px;
+    height: 22px;
+    margin-right: 50px;
+    margin-left: 50px;
   }
   /* end header */
 
@@ -3773,10 +3837,12 @@ footer {
 
   .cars__inner__mobile {
     display: flex;
-    overflow-y: visible;
-    /* overflow-y: scroll; */
+    /* overflow-y: visible; */
+    overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+
+		padding-bottom: 30px;
   }
 
   .cars__inner__mobile::-webkit-scrollbar {
@@ -3795,8 +3861,8 @@ footer {
     z-index: 9997;
     bottom: 45px;
     display: block;
+    width: 100%;
   }
-
   .cars__item {
     height: 272.93px;
 
@@ -4243,7 +4309,7 @@ footer {
   } */
 
   .cond__text > ul > li {
-    width: 273px;
+    width: 273px !important;
     font-size: 11.9942px;
   }
   /* end cond */
@@ -4277,7 +4343,7 @@ footer {
     overflow: -moz-scrollbars-none;
   }
   .info__inner__mobile > .info__item {
-    margin-left: 0 !important;
+    margin-left: 20px !important;
   }
   .info__item {
     padding-top: 20px;
@@ -4469,6 +4535,22 @@ footer {
     width: 329px;
     margin: 25px 0px 10px 0px;
   }
+  
+  .contact-phone {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #ffffff;
+    width: 329px;
+    margin: 25px 0px;
+  }
+
+  .contact-phone a {
+    color: #ffffff;
+    text-decoration: none;
+    
+  }
 
   .contact__info__mobile > div > a {
     margin: 0px 25px;
@@ -4480,11 +4562,17 @@ footer {
     display: grid;
     justify-content: center;
     gap: 0px;
+    margin: 45px 0px;
   }
 
   .rent__inner {
     display: grid;
     justify-content: center;
+    margin: 45px 0 20px 0;
+  }
+
+  .how {
+    margin: 75px 0px;
   }
 
   .contact {
@@ -4503,7 +4591,7 @@ footer {
     display: none;
   }
 
-  .effect__sand__right {
+  .effect__sand__right, .effect__sand {
     display: none;
   }
 
@@ -4575,7 +4663,9 @@ footer {
 }
 @media (max-width: 450px) {
   .nav__booking {
-    margin-right: 50px;
+    margin-right: 24px;
+    margin-left: 24px;
+
   }
 }
 /* end mobile */
@@ -4696,3 +4786,39 @@ footer {
   height: 400px;
 }
 /* end modal */
+
+@media screen and (max-width: 390px) {
+	.info__item__2 > h3, .info__logo {
+		width: 273px !important;
+	}	
+}
+
+@media screen and (max-width: 480px) {
+	.cars__item__top {
+    width: 100%;
+  }
+  .item__back {
+    width: 100%;
+    height: auto;
+  }
+  .logo__mobile {
+    width: 60px;
+    height: auto;
+  }
+  .contact__info__mobile > div > h5 {
+    width: 100%;
+  }
+  .cars__our, .calc__trip, .rent__logo, .how__logo, .cond__logo, .advantages__logo, .info__logo, .faq__logo, .values__logo, .advantages__logo, .contact__logo {
+    width: 100%;
+  }
+  .info__inner__mobile > .info__item {
+    margin-left: 0px !important;
+  }
+
+
+
+
+
+
+
+}
