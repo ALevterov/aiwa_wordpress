@@ -16,16 +16,16 @@ Version: 0.1
   flex-direction: row;
   flex-wrap: nowrap;
 }
-.gtranslate_menu > a.translate-btn, span.lang-divider {
+.gtranslate_menu > a.translate-btn,
+span.lang-divider {
   font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 22px;
-color: #959595;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #959595;
 
-text-decoration: none;
-outline: none;
-
+  text-decoration: none;
+  outline: none;
 }
 .gtranslate_menu > .translate-btn.selected {
   font-weight: 700;
@@ -36,18 +36,19 @@ outline: none;
 }
 
 @media screen and (max-width: 768px) {
-  .gtranslate_menu >  a.translate-btn, span.lang-divider {
-  font-size: 12px;
-  /* line-height: 15px; */
-  color: #959595;
+  .gtranslate_menu > a.translate-btn,
+  span.lang-divider {
+    font-size: 12px;
+    /* line-height: 15px; */
+    color: #959595;
   }
   .lang-divider {
-  margin: 0 3px;
-}
-.nav__booking > span {
-  font-size: 7px !important;
-  line-height: 12 !important;
-}
+    margin: 0 3px;
+  }
+  .nav__booking > span {
+    font-size: 7px !important;
+    line-height: 12 !important;
+  }
 }
 /* scroll */
 
@@ -67,7 +68,13 @@ outline: none;
 }
 
 /* end scroll */
-div.skiptranslate,#google_translate_element2{display:none!important;}body{top:0!important;}
+div.skiptranslate,
+#google_translate_element2 {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
 
 .logo__pc {
   display: block;
@@ -372,11 +379,10 @@ div.skiptranslate,#google_translate_element2{display:none!important;}body{top:0!
   left: -1000px;
   opacity: 0.5;
   mix-blend-mode: lighten;
-transform: rotate(82.58deg);
-width: 2384.35px;
-height: 1590.76px;
-left: -1600px;
-
+  transform: rotate(82.58deg);
+  width: 2384.35px;
+  height: 1590.76px;
+  left: -1600px;
 }
 
 .effect__sand__right {
@@ -385,10 +391,10 @@ left: -1600px;
   z-index: -2;
   top: -800px;
   width: 1914.07px;
-height: 1275.59px;
+  height: 1275.59px;
   opacity: 0.5;
   mix-blend-mode: lighten;
-transform: rotate(-99.9deg);
+  transform: rotate(-99.9deg);
 }
 
 .advantages__effect {
@@ -3659,11 +3665,7 @@ footer {
     line-height: 103px;
   }
   .main__logo__position {
-<<<<<<< HEAD
-    top: 150px; 
-=======
     top: 150px;
->>>>>>> 1985bc16071fbabfc4e5691bbcf7e3c5b1ef231c
   }
   .calc {
     margin-top: 70px;
@@ -3842,7 +3844,7 @@ footer {
     -ms-overflow-style: none;
     scrollbar-width: none;
 
-		padding-bottom: 30px;
+    padding-bottom: 30px;
   }
 
   .cars__inner__mobile::-webkit-scrollbar {
@@ -4535,7 +4537,7 @@ footer {
     width: 329px;
     margin: 25px 0px 10px 0px;
   }
-  
+
   .contact-phone {
     font-style: normal;
     font-weight: 400;
@@ -4549,7 +4551,6 @@ footer {
   .contact-phone a {
     color: #ffffff;
     text-decoration: none;
-    
   }
 
   .contact__info__mobile > div > a {
@@ -4591,7 +4592,8 @@ footer {
     display: none;
   }
 
-  .effect__sand__right, .effect__sand {
+  .effect__sand__right,
+  .effect__sand {
     display: none;
   }
 
@@ -4665,7 +4667,6 @@ footer {
   .nav__booking {
     margin-right: 24px;
     margin-left: 24px;
-
   }
 }
 /* end mobile */
@@ -4788,13 +4789,14 @@ footer {
 /* end modal */
 
 @media screen and (max-width: 390px) {
-	.info__item__2 > h3, .info__logo {
-		width: 273px !important;
-	}	
+  .info__item__2 > h3,
+  .info__logo {
+    width: 273px !important;
+  }
 }
 
 @media screen and (max-width: 480px) {
-	.cars__item__top {
+  .cars__item__top {
     width: 100%;
   }
   .item__back {
@@ -4808,17 +4810,20 @@ footer {
   .contact__info__mobile > div > h5 {
     width: 100%;
   }
-  .cars__our, .calc__trip, .rent__logo, .how__logo, .cond__logo, .advantages__logo, .info__logo, .faq__logo, .values__logo, .advantages__logo, .contact__logo {
+  .cars__our,
+  .calc__trip,
+  .rent__logo,
+  .how__logo,
+  .cond__logo,
+  .advantages__logo,
+  .info__logo,
+  .faq__logo,
+  .values__logo,
+  .advantages__logo,
+  .contact__logo {
     width: 100%;
   }
   .info__inner__mobile > .info__item {
     margin-left: 0px !important;
   }
-
-
-
-
-
-
-
 }
