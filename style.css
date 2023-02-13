@@ -3204,7 +3204,7 @@ details {
   font-size: 22px;
   line-height: 40px;
   color: #ffffff;
-  width: 560px;
+  /* width: 560px; */
 }
 
 .contact__info > div > a {
@@ -3625,7 +3625,7 @@ footer {
 
   .contact__info > div > h5 {
     font-size: 17.0166px;
-    width: 433.15px;
+    /* width: 433.15px; */
   }
   /* end contact */
 }
