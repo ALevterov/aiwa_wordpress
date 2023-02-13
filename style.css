@@ -1263,12 +1263,12 @@ header {
   position: relative;
 }
 .cars > .container {
-  -webkit-box-shadow: 0px -20px 8px 0px rgba(13, 13, 13, 0.2) inset,
-    0px 20px 8px 0px rgba(13, 13, 13, 0.2) inset;
-  -moz-box-shadow: 0px -20px 8px 0px rgba(13, 13, 13, 0.2) inset,
-    0px 20px 8px 0px rgba(13, 13, 13, 0.2) inset;
-  box-shadow: 0px -20px 8px 0px rgba(13, 13, 13, 0.2) inset,
-    0px 20px 8px 0px rgba(13, 13, 13, 0.2) inset;
+  -webkit-box-shadow: 0px -20px 8px 0px rgba(13, 13, 13, 0.6) inset,
+    0px 20px 8px 0px rgba(13, 13, 13, 0.6) inset;
+  -moz-box-shadow: 0px -20px 8px 0px rgba(13, 13, 13, 0.6) inset,
+    0px 20px 8px 0px rgba(13, 13, 13, 0.6) inset;
+  box-shadow: 0px -20px 8px 0px rgba(13, 13, 13, 0.6) inset,
+    0px 20px 8px 0px rgba(13, 13, 13, 0.6) inset;
 }
 
 #item1,
@@ -4248,7 +4248,9 @@ footer {
   .how__item {
     margin: 25px 10px;
   }
-
+  .how__btn {
+    margin-top: 0;
+  }
   .how__btn > a {
     font-size: 14.2214px;
     line-height: 32px;
