@@ -2709,6 +2709,7 @@ button.btn__thx {
   padding-bottom: 40px;
 
   position: relative;
+  overflow: hidden;
 }
 .info__bg > .container {
   position: relative;
@@ -2722,7 +2723,7 @@ button.btn__thx {
   left: 0; */
   min-width: 100%;
   min-height: 100%;
-  width: 100%;
+  width: auto;
   height: 100%;
 }
 @media screen and (max-width: 1024px) {
