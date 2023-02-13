@@ -44,6 +44,10 @@ outline: none;
   .lang-divider {
   margin: 0 3px;
 }
+.nav__booking > span {
+  font-size: 7px !important;
+  line-height: 12 !important;
+}
 }
 /* scroll */
 
@@ -4622,8 +4626,8 @@ footer {
 }
 @media (max-width: 450px) {
   .nav__booking {
-    margin-right: 28px;
-    margin-left: 28px;
+    margin-right: 24px;
+    margin-left: 24px;
 
   }
 }
