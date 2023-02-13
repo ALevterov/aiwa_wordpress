@@ -391,7 +391,7 @@
                 </tbody>
               </table>
             </div>
-            <a class="item__circle cars__btn">
+            <a href="#item<?= $cardIndex ?>" class="item__circle cars__btn">
               <h4 class="cars__open">подробнее</h4>
               <h4 class="cars__close" style="display: none">скрыть</h4>
               <img class="cars__image" src="<?php bloginfo('template_url'); ?>/assets/image/icon/cross.svg" alt="" />
