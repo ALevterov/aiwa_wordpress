@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -90,7 +90,7 @@
                       <img src="<?php bloginfo('template_url'); ?>/assets/image/icon/facebook.svg" alt="" />
                     </a>
                   </div>
-                  <div class="gtranslate_menu">
+                  <div class="gtranslate_menu notranslate">
               <?php echo do_shortcode('[gtranslate]'); ?>
             </div>
                 </div>
@@ -635,8 +635,8 @@
             <div class="calc__full">
               <div>
                 <h3><span id="end__day">10</span> дней</h3>
-                <h4>
-                  ( <span id="begin__date">20.01.2022</span> -
+                <h4 class="">
+                  ( <span  id="begin__date">20.01.2022</span> -
                   <span id="end__date">30.01.2022</span>)
                 </h4>
               </div>
@@ -779,7 +779,7 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
                   id="datepicker4"
                   class="date4"
                   readonly="readonly"
-                  placeholder="выберите дату "
+                  placeholder="выберите дату"
                 />
                 <img src="<?php bloginfo('template_url'); ?>/assets/image/icon/cross_date.svg" alt="" />
               </div>
