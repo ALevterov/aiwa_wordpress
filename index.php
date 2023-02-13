@@ -199,7 +199,7 @@
     </section>
 
     <section class="cars" id="cars">
-      <img class="effect__sand" src="<?php bloginfo('template_url'); ?>/assets/image/effect/effect_sand.png" alt="" />
+      <img class="effect__sand" src="<?php bloginfo('template_url'); ?>/assets/image/effect/sand2.png" alt="" />
       <div class="container">
         <h2 class="cars__our">Наши автомобили</h2>
         <div class="cars__swipe">
@@ -548,7 +548,7 @@
     <div class="calc" id="calc">
       <img
         class="effect__sand__right"
-        src="<?php bloginfo('template_url'); ?>/assets/image/effect/effect_sand_right.png"
+        src="<?php bloginfo('template_url'); ?>/assets/image/effect/sand1.png"
         alt=""
       />
       <div class="container">
