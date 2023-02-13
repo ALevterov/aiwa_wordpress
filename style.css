@@ -37,8 +37,8 @@ outline: none;
 
 @media screen and (max-width: 768px) {
   .gtranslate_menu > a, span {
-  font-size: 7px;
-  line-height: 12px;
+  font-size: 12px;
+  /* line-height: 15px; */
   color: #959595;
   }
   .lang-divider {
