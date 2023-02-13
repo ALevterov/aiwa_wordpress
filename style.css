@@ -3552,6 +3552,10 @@ footer {
   /* end cond */
 
   /* info */
+  .info__inner__mobile > .info__item {
+    margin-right: 20px;
+  }
+
   .info__item > p {
     font-size: 15.4697px;
     width: 624.97px;
