@@ -1739,7 +1739,7 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
         <h3 class="info__logo">О компании “AIWA Rent a Car”</h3>
       </div>
       <div class="info__bg">
-			<video autoplay muted loop id="myVideo">
+			<video autoplay playsinline="" muted loop id="myVideo">
   <source  src="<?php bloginfo('template_url'); ?>/assets/image/video.mp4" type="video/mp4">
 </video>
         <div class="container">
@@ -2392,7 +2392,10 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
           <div>
             <h4>Адрес:</h4>
             <h5>UAE, Dubai, AI Barsha 1, Deyaar Head office building, 401</h5>
-            <h5>971 4 523 5050, 971 58 5731415, 800 (AIWA) 2492</h5>
+            <div class="contact-phone">
+              <a href="tel: +97145235050">+971 4 523 5050</a>, 
+              <a href="tel: +971585731415">+971 5 857 31415</a>, 800 (AIWA) 2492
+            </div>
           </div>
           <div class="social_container">
             <a href="https://t.me/aiwarent" target="_blank">

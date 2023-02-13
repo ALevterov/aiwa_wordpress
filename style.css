@@ -3659,7 +3659,11 @@ footer {
     line-height: 103px;
   }
   .main__logo__position {
+<<<<<<< HEAD
     top: 150px; 
+=======
+    top: 150px;
+>>>>>>> 1985bc16071fbabfc4e5691bbcf7e3c5b1ef231c
   }
   .calc {
     margin-top: 70px;
@@ -3857,8 +3861,8 @@ footer {
     z-index: 9997;
     bottom: 45px;
     display: block;
+    width: 100%;
   }
-
   .cars__item {
     height: 272.93px;
 
@@ -4531,6 +4535,22 @@ footer {
     width: 329px;
     margin: 25px 0px 10px 0px;
   }
+  
+  .contact-phone {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #ffffff;
+    width: 329px;
+    margin: 25px 0px;
+  }
+
+  .contact-phone a {
+    color: #ffffff;
+    text-decoration: none;
+    
+  }
 
   .contact__info__mobile > div > a {
     margin: 0px 25px;
@@ -4542,11 +4562,17 @@ footer {
     display: grid;
     justify-content: center;
     gap: 0px;
+    margin: 45px 0px;
   }
 
   .rent__inner {
     display: grid;
     justify-content: center;
+    margin: 45px 0 20px 0;
+  }
+
+  .how {
+    margin: 75px 0px;
   }
 
   .contact {
@@ -4765,4 +4791,34 @@ footer {
 	.info__item__2 > h3, .info__logo {
 		width: 273px !important;
 	}	
+}
+
+@media screen and (max-width: 480px) {
+	.cars__item__top {
+    width: 100%;
+  }
+  .item__back {
+    width: 100%;
+    height: auto;
+  }
+  .logo__mobile {
+    width: 60px;
+    height: auto;
+  }
+  .contact__info__mobile > div > h5 {
+    width: 100%;
+  }
+  .cars__our, .calc__trip, .rent__logo, .how__logo, .cond__logo, .advantages__logo, .info__logo, .faq__logo, .values__logo, .advantages__logo, .contact__logo {
+    width: 100%;
+  }
+  .info__inner__mobile > .info__item {
+    margin-left: 0px !important;
+  }
+
+
+
+
+
+
+
 }
