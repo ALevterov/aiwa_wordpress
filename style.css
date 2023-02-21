@@ -914,17 +914,17 @@ section {
   margin-bottom: -60px;
 }
 .cars__add__open {
-	opacity: 1;
-	transition: opacity 0.9s ease;
+  opacity: 1;
+  transition: opacity 0.9s ease;
 }
 .cars__add__open.closed {
-	opacity: 0 !important;
+  opacity: 0 !important;
 }
 .cars__item.opened {
-	height: 1500px !important;
+  height: 1500px !important;
 }
 .cars__item.cars__down {
-  height: auto;
+  height: auto !important;
 }
 .burger:hover {
   cursor: pointer;
@@ -1610,7 +1610,10 @@ header {
   right: 0;
   text-align: center;
 }
-
+.cars__item.swiper-slide {
+  height: 343px;
+  transition: all 1s ease;
+}
 .new__cars {
   width: 537px;
   height: 444px;

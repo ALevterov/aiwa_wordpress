@@ -418,7 +418,7 @@
                         foreach($loop as $row) {
                           $galery = $row['photo_galery'];
                           ?>
-     <div class="cars__item swiper-slide" style="max-width: 330.09px">
+     <div id="item1<?= $cardIndex ?>" class="cars__item swiper-slide" style="max-width: 330.09px">
               <div class="cars__item__top">
                 <h3 class="item__name"><?= $row['car_name'] ?></h3>
                 <img
@@ -449,7 +449,7 @@
                 </div>
               </div>
               <div
-                class="cars__image__add cars__add__open"
+                class="cars__image__add cars__add__open closed"
                 style="display: none"
               >
                 <div class="cars__inner__image">
@@ -532,12 +532,12 @@
                   </tbody>
                 </table>
               </div>
-              <div class="item__circle cars__btn">
+              <a href="#item1<?= $cardIndex ?>" class="item__circle cars__btn">
                 <h4 class="cars__open">подробнее</h4>
                 <h4 class="cars__close" style="display: none">скрыть</h4>
                 <img class="cars__image" src="<?php bloginfo('template_url'); ?>/assets/image/icon/cross.svg" alt="" />
               </div>
-            </div>
+									</a>
                           <?php
                           $cardIndex++;
                         }

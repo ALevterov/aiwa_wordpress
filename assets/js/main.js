@@ -102,62 +102,60 @@ $.datepicker.regional['en'] = {
   yearSuffix: '',
 }
 
-function selectLanguage(e)  {
-  const lang = document.documentElement.lang;
-  console.log(lang);
-  if(lang === 'en') {
-
+function selectLanguage(e) {
+  const lang = document.documentElement.lang
+  console.log(lang)
+  if (lang === 'en') {
     transBtns.forEach(btn => {
-        const btnLang = btn.title
-        console.log(btnLang);
-        if(btnLang === 'Russian') {
-          btn.classList.add('selected')
-        }
-        if(btnLang === 'English') {
-          btn.classList.remove('selected')
-        }
+      const btnLang = btn.title
+      console.log(btnLang)
+      if (btnLang === 'Russian') {
+        btn.classList.add('selected')
+      }
+      if (btnLang === 'English') {
+        btn.classList.remove('selected')
+      }
     })
   } else {
     transBtns.forEach(btn => {
       const btnLang = btn.title
-      console.log(btnLang);
+      console.log(btnLang)
 
-      if(btnLang === 'Russian') {
+      if (btnLang === 'Russian') {
         btn.classList.remove('selected')
       }
-      if(btnLang === 'English') {
+      if (btnLang === 'English') {
         btn.classList.add('selected')
       }
-  })
+    })
   }
-
 }
-function initLanguage(e)  {
-  const lang = document.documentElement.lang;
-  console.log(lang);
-  if(lang === 'en') {
+function initLanguage(e) {
+  const lang = document.documentElement.lang
+  console.log(lang)
+  if (lang === 'en') {
     transBtns.forEach(btn => {
-        const btnLang = btn.title
-        console.log(btnLang);
-        if(btnLang === 'Russian') {
-          btn.classList.remove('selected')
-        }
-        if(btnLang === 'English') {
-          btn.classList.add('selected')
-        }
+      const btnLang = btn.title
+      console.log(btnLang)
+      if (btnLang === 'Russian') {
+        btn.classList.remove('selected')
+      }
+      if (btnLang === 'English') {
+        btn.classList.add('selected')
+      }
     })
   } else {
     transBtns.forEach(btn => {
       const btnLang = btn.title
-      console.log(btnLang);
+      console.log(btnLang)
 
-      if(btnLang === 'Russian') {
+      if (btnLang === 'Russian') {
         btn.classList.add('selected')
       }
-      if(btnLang === 'English') {
+      if (btnLang === 'English') {
         btn.classList.remove('selected')
       }
-  })
+    })
   }
 }
 initLanguage()
@@ -293,9 +291,9 @@ $('#datepicker').datepicker({
   changeMonth: true,
   changeYear: true,
   dateFormat: 'dd.mm.yy',
-    beforeShow: function(input, inst) {
-    $('#ui-datepicker-div').addClass('notranslate');
-},
+  beforeShow: function (input, inst) {
+    $('#ui-datepicker-div').addClass('notranslate')
+  },
 })
 
 $('.date').mousedown(function () {
@@ -304,9 +302,9 @@ $('.date').mousedown(function () {
 })
 
 $('#datepicker2').datepicker({
-  beforeShow: function(input, inst) {
-    $('#ui-datepicker-div').addClass('notranslate');
-},
+  beforeShow: function (input, inst) {
+    $('#ui-datepicker-div').addClass('notranslate')
+  },
   firstDay: 1,
   showOtherMonths: true,
   changeMonth: true,
@@ -325,9 +323,9 @@ $('#datepicker3').datepicker({
   changeMonth: true,
   changeYear: true,
   dateFormat: 'dd.mm.yy',
-  beforeShow: function(input, inst) {
-    $('#ui-datepicker-div').addClass('notranslate');
-},
+  beforeShow: function (input, inst) {
+    $('#ui-datepicker-div').addClass('notranslate')
+  },
 })
 
 $('.date3').mousedown(function () {
@@ -340,9 +338,9 @@ $('#datepicker4').datepicker({
   changeMonth: true,
   changeYear: true,
   dateFormat: 'dd.mm.yy',
-  beforeShow: function(input, inst) {
-    $('#ui-datepicker-div').addClass('notranslate');
-},
+  beforeShow: function (input, inst) {
+    $('#ui-datepicker-div').addClass('notranslate')
+  },
 })
 
 $('.date4').mousedown(function () {
@@ -379,32 +377,34 @@ let cardHeight = cars_item[0].scrollHeight
 for (let index = 0; index < cars_item.length; index++) {
   cars_btn[index].addEventListener('click', () => {
     if (cars_item[index].classList.contains('cars__down')) {
-			cars_open[index].style.display = 'block'
+      cars_open[index].style.display = 'block'
+      cars_close[index].style.visibility = 'hidden'
+      cars_add_open[index].classList.add('closed')
+      cars_close[index].classList.add('closed')
 
-			cars_add_open[index].classList.add('closed')
-			cars_close[index].classList.add('closed')
-
-			cars_item[index].classList.add('opened')
-			cars_item[index].classList.remove('cars__down')
-			setTimeout(()=> {
-				cars_item[index].classList.remove('opened')
-			}, 100)
+      cars_item[index].classList.add('opened')
+      cars_item[index].classList.remove('cars__down')
+      setTimeout(() => {
+        cars_item[index].classList.remove('opened')
+      }, 100)
       cars_image[index].classList.remove('cars__cross')
-			setTimeout(()=> {
-			cars_close[index].style.display = 'none'
-      cars_add_open[index].style.display = 'none'
-			}, 990)
+      setTimeout(() => {
+        cars_close[index].style.display = 'none'
+        cars_add_open[index].style.display = 'none'
+        cars_close[index].style.visibility = 'visible'
+      }, 990)
 
       item_circle[index].classList.remove('cars__item__circle')
     } else {
-			cars_item[index].classList.add('opened')
-			setTimeout(()=> {
-				cars_close[index].classList.remove('closed')
-				cars_add_open[index].classList.remove('closed')
-			}, 100)
-			setTimeout(()=> {
-				cars_item[index].classList.remove('opened')
-			}, 990)
+      cars_item[index].classList.add('opened')
+
+      setTimeout(() => {
+        cars_close[index].classList.remove('closed')
+        cars_add_open[index].classList.remove('closed')
+      }, 100)
+      setTimeout(() => {
+        cars_item[index].classList.remove('opened')
+      }, 990)
       cars_item[index].classList.add('cars__down')
       cars_image[index].classList.add('cars__cross')
 
