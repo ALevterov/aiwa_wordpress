@@ -654,6 +654,7 @@ article {
 .cars__item__circle {
   bottom: -20px;
 }
+
 @media screen and (max-width: 1024px) {
   .item__circle.cars__item__circle {
     bottom: -20px;
@@ -911,6 +912,16 @@ section {
 
 .cars__item.cars__down > .cars__image__add.cars__add__open {
   margin-bottom: -60px;
+}
+.cars__add__open {
+	opacity: 1;
+	transition: opacity 0.9s ease;
+}
+.cars__add__open.closed {
+	opacity: 0 !important;
+}
+.cars__item.opened {
+	height: 1500px !important;
 }
 .cars__item.cars__down {
   height: auto;
@@ -1327,7 +1338,7 @@ header {
   border-radius: 20px;
   margin: 90px 30px 50px 0px;
   position: relative;
-  transition: 0.3s;
+  transition: 1s all ease;
 }
 
 .item__name {

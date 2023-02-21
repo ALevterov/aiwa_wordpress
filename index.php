@@ -199,7 +199,7 @@
     </section>
 
     <section class="cars" id="cars">
-      <img class="effect__sand" src="<?php bloginfo('template_url'); ?>/assets/image/effect/sand2.png" alt="" />
+      <!-- <img class="effect__sand" src="<?php bloginfo('template_url'); ?>/assets/image/effect/sand2.png" alt="" /> -->
       <div class="container">
         <h2 class="cars__our">Наши автомобили</h2>
         <div class="cars__swipe">
@@ -303,7 +303,7 @@
               </div>
             </div>
             <div
-              class="cars__image__add cars__add__open"
+              class="cars__image__add cars__add__open closed"
               style="
                 display: none;
                 background: #000;
@@ -546,11 +546,11 @@
           </div>
     </section>
     <div class="calc" id="calc">
-      <img
+      <!-- <img
         class="effect__sand__right"
         src="<?php bloginfo('template_url'); ?>/assets/image/effect/sand1.png"
         alt=""
-      />
+      /> -->
       <div class="container">
         <h2 class="calc__trip">калькулятор поездки</h2>
         <h3 class="calc__buy">рассчитайте стоимость Вашей поездки</h3>
@@ -2109,11 +2109,11 @@ echo "<style> .form__thx.form__block__thx { display: block; } button.btn__thx {d
     </section>
 
     <section class="advantages" id="advantages">
-      <img
+      <!-- <img
         class="advantages__effect"
         src="<?php bloginfo('template_url'); ?>/assets/image/effect/effect_sand_right.png"
         alt=""
-      />
+      /> -->
       <div class="container">
         <h3 class="advantages__logo">Наши преимущества</h3>
         <div class="advantages__inner">
